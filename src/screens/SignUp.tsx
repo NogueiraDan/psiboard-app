@@ -27,7 +27,7 @@ export default function SignUp() {
       <Text className="text-3xl">SignIn Screen</Text>
       <Button
         title="Ir para Login"
-        onPress={() => navigation.navigate("SignUp")}
+        onPress={() => navigation.navigate("SignIn")}
       />
       <TextInput placeholder="Nome" value={name} onChangeText={setName} />
       <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
