@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function SignIn() {
   const navigation = useNavigation();
   return (
-    <View className="flex-1 justify-center items-center bg-slate-200">
+    <View className="pt-5 flex-1 justify-center items-center bg-slate-200">
       <Text className="text-3xl">Onboarding Screen</Text>
       <Button
         title="Faça seu Login"

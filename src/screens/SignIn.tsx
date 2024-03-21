@@ -22,7 +22,7 @@ export default function SignIn() {
     //navigation.navigate("TabMainRoutes");
   };
   return (
-    <View className="flex-1 justify-center items-center bg-slate-200">
+    <View className="flex-1 justify-center items-cente bg-slate-200">
       <Text className="text-3xl">SignIn Screen</Text>
       <Button
         title="Ir para Cadastro"

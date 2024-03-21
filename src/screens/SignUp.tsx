@@ -23,7 +23,7 @@ export default function SignUp() {
     });
   };
   return (
-    <View className="flex-1 justify-center items-center bg-slate-200">
+    <View className="bg-slate-200 flex-1 justify-center items-center">
       <Text className="text-3xl">SignIn Screen</Text>
       <Button
         title="Ir para Login"
