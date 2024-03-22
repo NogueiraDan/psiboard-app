@@ -18,7 +18,8 @@ export default function TabMainRoutes() {
         tabBarInactiveTintColor:"#fff",
         tabBarStyle:{
           backgroundColor: "#02969c",
-          height: 55,
+          height: 60,
+          paddingBottom: 5
         }
       }}
     >
