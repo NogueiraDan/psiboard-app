@@ -8,10 +8,10 @@ export default function SignIn() {
   const [senha, setSenha] = useState("");
   
   const handleSubmit = () => {
-    if (!senha && !email) {
-      alert("Digite algo");
-      return;
-    }
+    // if (!senha && !email) {
+    //   alert("Digite algo");
+    //   return;
+    // }
     Alert.alert("Sucesso");
     setEmail("");
     setSenha("");

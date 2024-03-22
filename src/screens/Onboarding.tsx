@@ -1,10 +1,10 @@
-import { Text, View, Button } from "react-native";
+import { Text, Button, SafeAreaView, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export default function SignIn() {
   const navigation = useNavigation();
   return (
-    <View className="pt-5 flex-1 justify-center items-center bg-slate-200">
+    <SafeAreaView className="pt-[64px] flex-1 items-center bg-slate-200 back">
       <Text className="text-3xl">Onboarding Screen</Text>
       <Button
         title="Faça seu Login"
@@ -14,6 +14,6 @@ export default function SignIn() {
         title="Crie sua conta"
         onPress={() => navigation.navigate("SignUp")}
       />
-    </View>
+    </SafeAreaView>
   );
 }
