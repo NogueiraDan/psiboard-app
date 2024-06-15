@@ -9,26 +9,38 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { useLogin } from "../hooks/useLogin";
 
 export default function SignIn() {
   const navigation = useNavigation();
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const { login } = useLogin();
+  const [email, setEmail] = useState<any>("");
+  const [password, setPassword] = useState<any>("");
 
-  const handleSubmit = () => {
-    if (!senha && !email) {
+  async function handleSubmit() {
+    if (!password && !email) {
       alert("Digite algo");
       return;
     }
-    Alert.alert("Sucesso");
-    setEmail("");
-    setSenha("");
-    navigation.reset({
-      index: 0,
-      routes: [{ name: "TabMainRoutes" }],
-    });
-    navigation.navigate("TabMainRoutes");
-  };
+    try {
+      const response = await login({ email, password });
+      console.log("Login successful:", response);
+    } catch (error) {
+      console.error("Login failed:", error);
+      Alert.alert(
+        "Erro: "+ error,
+        "Não foi possível realizar o login. Tente novamente."
+      );
+    }
+    // Alert.alert("Sucesso");
+    // setEmail("");
+    // setPassword("");
+    // navigation.reset({
+    //   index: 0,
+    //   routes: [{ name: "TabMainRoutes" }],
+    // });
+    // navigation.navigate("TabMainRoutes");
+  }
   return (
     <SafeAreaView className="flex-1 justify-center gap-5 items-center bg-[#fefefe] text-white">
       <Image
@@ -46,9 +58,9 @@ export default function SignIn() {
       />
 
       <TextInput
-        placeholder="Senha*"
-        value={senha}
-        onChangeText={setSenha}
+        placeholder="Digite sua senha..."
+        value={password}
+        onChangeText={setPassword}
         className="h-[50px] w-4/5 border-2 border-[#02969c] rounded px-3 placeholder:italic placeholder:text-black"
       />
 
