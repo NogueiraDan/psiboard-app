@@ -25,21 +25,21 @@ export default function SignIn() {
     try {
       const response = await login({ email, password });
       console.log("Login successful:", response);
+      Alert.alert("Sucesso");
+      setEmail("");
+      setPassword("");
+      navigation.reset({
+        index: 0,
+        routes: [{ name: "TabMainRoutes" }],
+      });
+      navigation.navigate("TabMainRoutes");
     } catch (error) {
       console.error("Login failed:", error);
       Alert.alert(
-        "Erro: "+ error,
+        "Erro: " + error,
         "Não foi possível realizar o login. Tente novamente."
       );
     }
-    // Alert.alert("Sucesso");
-    // setEmail("");
-    // setPassword("");
-    // navigation.reset({
-    //   index: 0,
-    //   routes: [{ name: "TabMainRoutes" }],
-    // });
-    // navigation.navigate("TabMainRoutes");
   }
   return (
     <SafeAreaView className="flex-1 justify-center gap-5 items-center bg-[#fefefe] text-white">
