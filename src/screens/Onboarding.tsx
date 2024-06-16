@@ -9,7 +9,6 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 export default function SignIn() {
-  
   const navigation = useNavigation<any>();
 
   return (
@@ -31,6 +30,7 @@ export default function SignIn() {
 
         <View className="w-[250px] h-auto gap-5">
           <TouchableOpacity
+            testID="login-button"
             onPress={() => navigation.navigate("SignIn")}
             className="text-center flex items-center justify-center h-[54px] py-2 bg-[#45b7ba] text-[#fff] font-semibold rounded"
           >
@@ -38,9 +38,9 @@ export default function SignIn() {
               Faça seu Login
             </Text>
           </TouchableOpacity>
-          
 
           <TouchableOpacity
+            testID="sign-up-button"
             onPress={() => navigation.navigate("SignUp")}
             className="text-center flex items-center  justify-center h-[54px]  px-4 py-2 bg-[#45b7ba] text-[#fff] font-semibold rounded"
           >
