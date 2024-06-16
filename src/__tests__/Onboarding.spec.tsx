@@ -3,7 +3,6 @@ import Onboarding from "./../screens/Onboarding";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { UserProvider } from "../context/UserContext";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import SignIn from "../screens/SignIn";
 
 // Mockando o useNavigation do NavigationContainer com Jest
 jest.mock("@react-navigation/native", () => {
