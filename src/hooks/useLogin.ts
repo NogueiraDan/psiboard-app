@@ -20,7 +20,7 @@ export function useLogin() {
           id: response.data.id,
           name: response.data.name,
           email: response.data.email,
-          token: response.data.access_token,
+          access_token: response.data.access_token,
         };
         return user;
       } catch (error) {

@@ -10,24 +10,30 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useLogin } from "../hooks/useLogin";
+import { useUser } from "../context/UserContext";
 
 export default function SignIn() {
   const navigation = useNavigation();
   const { login } = useLogin();
+  const { updateUser } = useUser();
   const [email, setEmail] = useState<any>("");
   const [password, setPassword] = useState<any>("");
 
   async function handleSubmit() {
     if (!password && !email) {
-      alert("Digite algo");
+      alert("Digite algo para poder seguir!");
       return;
     }
+
     try {
       const response = await login({ email, password });
+      await updateUser(response);
       console.log("Login successful:", response);
       Alert.alert("Sucesso");
       setEmail("");
       setPassword("");
+
+      // Reset the navigation stack and navigate to the "TabMainRoutes" screen.
       navigation.reset({
         index: 0,
         routes: [{ name: "TabMainRoutes" }],
