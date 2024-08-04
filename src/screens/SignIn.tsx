@@ -21,7 +21,7 @@ export default function SignIn() {
 
   async function handleSubmit() {
     if (!password && !email) {
-      alert("Digite algo para poder seguir!");
+      Alert.alert("Digite algo para poder seguir!");
       return;
     }
 
@@ -58,6 +58,7 @@ export default function SignIn() {
       </Text>
       <TextInput
         placeholder="Digite seu email..."
+        testID="input-email"
         value={email}
         onChangeText={setEmail}
         className="h-[50px] w-4/5 border-2 border-[#02969c] rounded px-3 placeholder:italic placeholder:text-black"
@@ -65,6 +66,7 @@ export default function SignIn() {
 
       <TextInput
         placeholder="Digite sua senha..."
+        testID="input-password"
         value={password}
         onChangeText={setPassword}
         className="h-[50px] w-4/5 border-2 border-[#02969c] rounded px-3 placeholder:italic placeholder:text-black"
@@ -73,6 +75,7 @@ export default function SignIn() {
       <View className="mt-10 items-center w-full gap-5">
         <TouchableOpacity
           onPress={handleSubmit}
+          testID="button-login"
           className="flex w-[50%] items-center h-[50px] justify-center rounded-md bg-[#02969c] px-3 py-1.5 text-sm font-semibold leading-6 text-[#fff] shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
         >
           <Text className="text-white text-xl text-center items-center justify-center flex">
